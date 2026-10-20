@@ -74,7 +74,7 @@ kill_mode_then_recover() {
 
 cd "$ROOT"
 mkdir -p "$STORE_ROOT"
-cargo build "${FEATURE_ARGS[@]}" --example stress_worker >/dev/null
+cargo build ${FEATURE_ARGS[@]+"${FEATURE_ARGS[@]}"} --example stress_worker >/dev/null
 
 echo "graph multiprocess stress: store=$STORE_ROOT db_base=$DB_BASE ops=$OPS"
 
